@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة تحكم المشرف</title>
+    <style>
+        body { font-family: Arial; background-color: #fff7f0; padding: 30px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        select, button { padding: 5px 10px; font-size: 14px; }
+        h2 { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h2>تحديث حالة الأضاحي</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>رقم الأضحية</th>
+                <th>الاسم</th>
+                <th>الجوال</th>
+                <th>الحالة الحالية</th>
+                <th>تحديث الحالة</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.id }}</td>
+                <td>{{ record.name }}</td>
+                <td>{{ record.phone }}</td>
+                <td>{{ record.get_status_display }}</td>
+                <td>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <input type="hidden" name="udhiyah_id" value="{{ record.id }}">
+                        <select name="status">
+                            {% for value, label in status_choices %}
+                                <option value="{{ value }}" {% if value == record.status %}selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit">تحديث</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

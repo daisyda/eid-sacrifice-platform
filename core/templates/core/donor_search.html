@@ -1,0 +1,11 @@
+<h2 style="text-align:right;">الاستعلام عن الأضحية</h2>
+
+<form action="{% url 'donor_status' %}" method="get" style="text-align:right;">
+    <label>رقم الأضحية:</label><br>
+    <input type="text" name="udhiyah_id" required><br><br>
+
+    <label>رقم جوال المتبرع:</label><br>
+    <input type="text" name="phone" required><br><br>
+
+    <button type="submit">بحث</button>
+</form>
