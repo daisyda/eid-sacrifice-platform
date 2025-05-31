@@ -1,0 +1,99 @@
+:root {
+    --bg_color: #fafafa;
+    --txt_color: #888;
+    --link_color: #35b;
+    --btn_color: #aaa;
+    --btn_txt_color: #fff;
+    --imp_btn_color: #ffbc00;
+    --imp_btn_txt_color: #fff;
+    --nav_color: #eee;
+    --nav_txt_color: #555;
+    --cats_color: #eee;
+    --cats_txt_color: #555;
+    --progress-color: var(--btn_color);
+    --progress-background-color: #eee;
+    --border-radius: 8px;
+    --shdow: 0 3px 10px -6px rgb(0 0 0 / 40%);
+    --main-color: #6dcb64;
+}
+
+html {
+    direction: rtl;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background-color: var(--bg_color);
+    color: var(--txt_color);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.timeline-container {
+    background-color: #fefafa;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    direction: rtl;
+    text-align: right;
+}
+
+.donor-search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f9f8f8;
+}
+
+.donor-search-card {
+    background-color: #fff9fa;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 450px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+input#udhiyah_id {
+    background-color: #f4e7b5;
+}
+
+input#phone {
+    background-color: #e4f0ff;
+}
+
+button[type="submit"] {
+    background-color: #7c0a27;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+}

@@ -1,11 +1,82 @@
-<h2 style="text-align:right;">الاستعلام عن الأضحية</h2>
+{% extends 'base.html' %}
 
-<form action="{% url 'donor_status' %}" method="get" style="text-align:right;">
-    <label>رقم الأضحية:</label><br>
-    <input type="text" name="udhiyah_id" required><br><br>
+{% block content %}
+<div style="background-color: #fcf7f8; min-height: 100vh; padding: 40px 20px;">
+    <div style="
+        max-width: 680px;
+        margin: 60px auto;
+        background-color: #ffffff;
+        padding: 50px 40px;
+        border-radius: 25px;
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    ">
+        <form method="GET" action="{% url 'donor_status' %}">
+            <!-- Udhiyah ID Field -->
+            <div style="margin-bottom: 30px;">
+                <label for="udhiyah_id" style="
+                    display: block;
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    color: #222;
+                    text-align: right;
+                ">رقم الأضحية:</label>
+                <input type="text" id="udhiyah_id" name="udhiyah_id"
+                       style="
+                           width: 100%;
+                           padding: 16px 20px;
+                           font-size: 18px;
+                           background-color: #f3e7c6;
+                           border: 1px solid #ccc;
+                           border-radius: 22px;
+                           direction: rtl;
+                           text-align: right;
+                       " required>
+            </div>
 
-    <label>رقم جوال المتبرع:</label><br>
-    <input type="text" name="phone" required><br><br>
+            <!-- Phone Number Field -->
+            <div style="margin-bottom: 30px;">
+                <label for="phone" style="
+                    display: block;
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    color: #222;
+                    text-align: right;
+                ">رقم جوال المتبرع:</label>
+                <input type="text" id="phone" name="phone"
+                       style="
+                           width: 100%;
+                           padding: 16px 20px;
+                           font-size: 18px;
+                           background-color: #f3e7c6;
+                           border: 1px solid #ccc;
+                           border-radius: 22px;
+                           direction: rtl;
+                           text-align: right;
+                       " required>
+            </div>
 
-    <button type="submit">بحث</button>
-</form>
+            <!-- Submit Button -->
+            <div style="text-align: center;">
+                <button type="submit"
+                        style="
+                            font-size: 20px;
+                            padding: 12px 48px;
+                            background-color: #96173f;
+                            color: white;
+                            border: none;
+                            border-radius: 16px;
+                            font-weight: bold;
+                            box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.15);
+                            transition: background-color 0.3s ease;
+                        "
+                        onmouseover="this.style.backgroundColor='#7a1132'"
+                        onmouseout="this.style.backgroundColor='#96173f'">
+                    بحث
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

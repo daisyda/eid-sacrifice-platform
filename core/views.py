@@ -25,9 +25,16 @@ def donor_status(request):
     donor_name = record.name
     current_status = record.status
 
-    status_sequence = ['paid', 'booked', 'slaughtered', 'cutting', 'distributing', 'done']
+    # Shared initial steps
+    status_sequence = ['paid', 'booked', 'slaughtered', 'cutting']
 
-    # Generate timeline steps
+    # Custom tail based on donation type
+    if record.donation_type == 'full':
+        status_sequence += ['distributing', 'done']
+    else:  # half
+        status_sequence += ['half_ready', 'distributing', 'done']
+
+    # Build timeline steps
     timeline_steps = []
     active = True
     for step in status_sequence:
@@ -46,6 +53,7 @@ def donor_status(request):
         'status': current_status,
         'timeline_steps': timeline_steps,
     })
+
 
 
 from django.shortcuts import render, redirect

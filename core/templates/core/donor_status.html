@@ -1,3 +1,6 @@
+{% extends 'core/base.html' %}
+{% block title %}حالة الأضحية{% endblock %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -96,6 +99,7 @@
                         {% if step.code == "booked" %}تم حجز الأضحية وتحديد وقت الذبح{% endif %}
                         {% if step.code == "slaughtered" %}تم تنفيذ الذبح في الوقت الشرعي{% endif %}
                         {% if step.code == "cutting" %}جاري تجهيز اللحوم وتوزينها{% endif %}
+                        {% if step.code == "half_ready" %}نصف الأضحية جاهز للاستلام{% endif %}
                         {% if step.code == "distributing" %}بدأت عملية التوزيع على المستفيدين{% endif %}
                         {% if step.code == "done" %}تم التوزيع بنجاح{% endif %}
                     </div>
