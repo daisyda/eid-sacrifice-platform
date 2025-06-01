@@ -10,65 +10,70 @@
         border-radius: 25px;
         box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
     ">
-        <form method="GET" action="{% url 'donor_status' %}">
+
+        <style>
+            input[type="text"] {
+                background-color: #f5eecf !important;
+                border: none;
+                outline: none;
+                box-shadow: none;
+                padding: 8px 16px;
+                font-size: 16px;
+                border-radius: 16px;
+                text-align: right;
+                direction: rtl;
+                width: 100%;
+            }
+
+            input[type="text"]:focus {
+                background-color: #f5eecf !important;
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+
+            /* Optional: Remove autofill glow in Chrome */
+            input:-webkit-autofill {
+                box-shadow: 0 0 0 1000px #f5eecf inset !important;
+                -webkit-text-fill-color: #000 !important;
+            }
+        </style>
+
+        <form method="GET" action="{% url 'donor_status' %}" style="max-width: 500px; margin: 0 auto; direction: rtl;">
             <!-- Udhiyah ID Field -->
-            <div style="margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; margin-bottom: 16px;">
                 <label for="udhiyah_id" style="
-                    display: block;
-                    font-size: 22px;
+                    min-width: 160px;
+                    font-size: 18px;
                     font-weight: bold;
-                    margin-bottom: 10px;
                     color: #222;
-                    text-align: right;
                 ">رقم الأضحية:</label>
-                <input type="text" id="udhiyah_id" name="udhiyah_id"
-                       style="
-                           width: 100%;
-                           padding: 16px 20px;
-                           font-size: 18px;
-                           background-color: #f3e7c6;
-                           border: 1px solid #ccc;
-                           border-radius: 22px;
-                           direction: rtl;
-                           text-align: right;
-                       " required>
+                <input type="text" id="udhiyah_id" name="udhiyah_id" required>
             </div>
 
             <!-- Phone Number Field -->
-            <div style="margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
                 <label for="phone" style="
-                    display: block;
-                    font-size: 22px;
+                    min-width: 160px;
+                    font-size: 18px;
                     font-weight: bold;
-                    margin-bottom: 10px;
                     color: #222;
-                    text-align: right;
                 ">رقم جوال المتبرع:</label>
-                <input type="text" id="phone" name="phone"
-                       style="
-                           width: 100%;
-                           padding: 16px 20px;
-                           font-size: 18px;
-                           background-color: #f3e7c6;
-                           border: 1px solid #ccc;
-                           border-radius: 22px;
-                           direction: rtl;
-                           text-align: right;
-                       " required>
+                <input type="text" id="phone" name="phone" required>
             </div>
 
             <!-- Submit Button -->
             <div style="text-align: center;">
                 <button type="submit"
                         style="
-                            font-size: 20px;
-                            padding: 12px 48px;
+                            font-size: 18px;
+                            padding: 10px 40px;
                             background-color: #96173f;
                             color: white;
                             border: none;
                             border-radius: 16px;
                             font-weight: bold;
-                            box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.15);
+                            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
                             transition: background-color 0.3s ease;
                         "
                         onmouseover="this.style.backgroundColor='#7a1132'"
